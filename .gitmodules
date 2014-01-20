@@ -1,3 +1,6 @@
 [submodule "vim.symlink/bundle/syntastic"]
 	path = vim.symlink/bundle/syntastic
 	url = git@github.com:scrooloose/syntastic.git
+[submodule "vim.symlink/bundle/vim-powerline"]
+	path = vim.symlink/bundle/vim-powerline
+	url = git@github.com:Lokaltog/vim-powerline
