@@ -7,3 +7,6 @@
 [submodule "zsh.symlink/oh-my-zsh"]
 	path = zsh.symlink/oh-my-zsh
 	url = git@github.com:robbyrussell/oh-my-zsh
+[submodule "vim.symlink/bundle/hexmode"]
+	path = vim.symlink/bundle/hexmode
+	url = git@github.com:fidian/hexmode
