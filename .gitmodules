@@ -10,3 +10,6 @@
 [submodule "vim.symlink/bundle/hexmode"]
 	path = vim.symlink/bundle/hexmode
 	url = git@github.com:fidian/hexmode
+[submodule "vim.symlink/bundle/vim-surround"]
+	path = vim.symlink/bundle/vim-surround
+	url = git@github.com:tpope/vim-surround
