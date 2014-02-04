@@ -19,3 +19,6 @@
 [submodule "vim.symlink/bundle/ctrlp.vim"]
 	path = vim.symlink/bundle/ctrlp.vim
 	url = git@github.com:kien/ctrlp.vim
+[submodule "vim.symlink/bundle/vim-commentary"]
+	path = vim.symlink/bundle/vim-commentary
+	url = git@github.com:tpope/vim-commentary
