@@ -16,3 +16,6 @@
 [submodule "vim.symlink/bundle/vim-repeat"]
 	path = vim.symlink/bundle/vim-repeat
 	url = git@github.com:tpope/vim-repeat
+[submodule "vim.symlink/bundle/ctrlp.vim"]
+	path = vim.symlink/bundle/ctrlp.vim
+	url = git@github.com:kien/ctrlp.vim
