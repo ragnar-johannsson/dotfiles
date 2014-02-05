@@ -28,3 +28,6 @@
 [submodule "vim.symlink/bundle/vim-go"]
 	path = vim.symlink/bundle/vim-go
 	url = git@github.com:fatih/vim-go
+[submodule "vim.symlink/bundle/vim-javascript"]
+	path = vim.symlink/bundle/vim-javascript
+	url = git@github.com:pangloss/vim-javascript.git
