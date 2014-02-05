@@ -22,3 +22,6 @@
 [submodule "vim.symlink/bundle/vim-commentary"]
 	path = vim.symlink/bundle/vim-commentary
 	url = git@github.com:tpope/vim-commentary
+[submodule "vim.symlink/bundle/python-mode"]
+	path = vim.symlink/bundle/python-mode
+	url = git@github.com:klen/python-mode
