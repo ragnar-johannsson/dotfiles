@@ -34,3 +34,6 @@
 [submodule "vim.symlink/bundle/vim-ruby"]
 	path = vim.symlink/bundle/vim-ruby
 	url = git@github.com:vim-ruby/vim-ruby
+[submodule "vim.symlink/bundle/vim-vagrant"]
+	path = vim.symlink/bundle/vim-vagrant
+	url = git@github.com:vim-scripts/vim-vagrant
