@@ -37,3 +37,6 @@
 [submodule "vim.symlink/bundle/vim-vagrant"]
 	path = vim.symlink/bundle/vim-vagrant
 	url = git@github.com:vim-scripts/vim-vagrant
+[submodule "vim.symlink/bundle/vim-colorschemes"]
+	path = vim.symlink/bundle/vim-colorschemes
+	url = git@github.com:flazz/vim-colorschemes
