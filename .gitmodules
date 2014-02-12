@@ -49,3 +49,6 @@
 [submodule "vim.symlink/bundle/vim-markdown"]
 	path = vim.symlink/bundle/vim-markdown
 	url = git@github.com:plasticboy/vim-markdown
+[submodule "vim.symlink/bundle/vim-pasta"]
+	path = vim.symlink/bundle/vim-pasta
+	url = git@github.com:sickill/vim-pasta
