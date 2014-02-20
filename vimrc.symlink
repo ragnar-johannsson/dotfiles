@@ -1,0 +1,56 @@
+call pathogen#infect()
+call pathogen#helptags()
+
+set encoding=utf8
+set nocompatible
+
+set cindent
+set expandtab
+set shiftwidth=4
+set softtabstop=4
+set tabstop=8
+
+set incsearch
+set hlsearch
+
+set viminfo='10,\"100,:20,%,n~/.viminfo
+
+filetype plugin indent on
+syntax on
+
+colorscheme jellybeans
+
+" Custom mappings
+let mapleader="þ"
+nmap <Leader>p :set paste!<CR>
+nmap <Leader>l :setlocal number!<CR>
+nmap <Leader>n :nohlsearch<CR>
+nmap <Leader>, :CtrlPBuffer<CR>
+nmap <Leader>t :set expandtab tabstop=8 shiftwidth=4 softtabstop=4<CR>
+nmap <Leader>T :set noexpandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>
+nnoremap <Leader>W :w !sudo tee % > /dev/null
+nnoremap <C-H> :Hexmode<CR>
+noremap ' `
+noremap ` '
+
+" Plugin customizations
+let g:vim_markdown_folding_disabled=1
+
+" Powerline
+set laststatus=2
+let g:Powerline_symbols = 'fancy'
+set timeoutlen=1000 ttimeoutlen=0
+
+" Restore cursor to last position
+function! ResCur()
+    if line("'\"") <= line("$")
+        normal! g`"
+        return 1
+    endif
+endfunction
+
+augroup resCur
+    autocmd!
+    autocmd BufWinEnter * call ResCur()
+augroup END
+
