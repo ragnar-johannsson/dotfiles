@@ -1,0 +1,46 @@
+
+# Base paths
+ZSH=$HOME/.zsh/oh-my-zsh
+ZSH_CUSTOM=$HOME/.zsh/custom
+
+# Theme
+ZSH_THEME="ragnarb"
+
+# Case sensitive completion
+CASE_SENSITIVE="true"
+
+# Disable omz behavior
+DISABLE_AUTO_UPDATE="true"
+DISABLE_CORRECTION="true"
+
+# Plugins
+plugins=(brew docker gitfast go node npm osx pyenv python rsync usr vagrant virtualenv)
+
+source $ZSH/oh-my-zsh.sh
+
+# History 
+setopt inc_append_history
+setopt share_history
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+
+# PATHs
+
+# Npm
+export PATH=$PATH:/usr/local/share/npm/bin
+
+# Go
+export GOPATH=$HOME/dev/go
+export PATH=$PATH:$GOPATH/bin
+
+# Pyenv
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+PATH=$HOME/.pyenv/shims:$PATH
+
+# RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+PATH=$PATH:$HOME/.rvm/bin
+
+# Brew
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH:$HOME/.bin
+
