@@ -26,9 +26,9 @@ done
 # Fetch keys & auth files and deploy
 cd $KEYS_TMP_DIR
 echo -n "Keys & auth files URL: " && read URL
-curl -sS "$URL" | openssl aes-256-cbc -d | tar ztf -
-for SRC in $KEYS_TMP_DIR/.??*; do
+curl -sS "$URL" | openssl aes-256-cbc -d | tar zxf -
+for SRC in .??*; do
     DST=$HOME/$SRC
     backup_if_exists $DST
-    mv $BASE/$SRC $DST
+    mv $SRC $DST
 done
