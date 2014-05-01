@@ -35,6 +35,7 @@ noremap ` '
 
 " Plugin customizations
 let g:vim_markdown_folding_disabled=1
+let g:pymode_folding=0
 
 " Powerline
 set laststatus=2
