@@ -44,3 +44,9 @@ PATH=$PATH:$HOME/.rvm/bin
 # Brew
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH:$HOME/.bin
 
+# GQ
+export DEVMANAGEMENTHOME=$HOME/dev/gq/development-management
+export PATH=$PATH:$DEVMANAGEMENTHOME/bin:$HOME/dev/gq/server-management/bin
+
+# Custom
+export PATH=$PATH:$HOME/bin
