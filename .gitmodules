@@ -52,3 +52,6 @@
 [submodule "vim.symlink/bundle/vim-pasta"]
 	path = vim.symlink/bundle/vim-pasta
 	url = git@github.com:sickill/vim-pasta
+[submodule "vim.symlink/bundle/vim-json"]
+	path = vim.symlink/bundle/vim-json
+	url = git@github.com:elzr/vim-json.git
