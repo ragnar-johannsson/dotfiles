@@ -175,4 +175,3 @@ curl -3 -o "$HOME/Library/Fonts/Meslo LG M Regular for Powerline.otf" https://ra
 
 # Clone the dotfiles repo and install
 git clone https://github.com/ragnar-johannsson/dotfiles.git $HOME/.dotfiles
-cd $HOME/.dotfiles && git submodule init && git submodule update && ./setup.sh
