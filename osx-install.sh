@@ -132,6 +132,7 @@ brew install brew-cask
 # Casks
 cat << EOF | xargs -n 1 brew cask install
 bonjour-browser
+chefdk
 chicken
 cord
 cyberduck
