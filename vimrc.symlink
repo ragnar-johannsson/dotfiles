@@ -1,5 +1,54 @@
-call pathogen#infect()
-call pathogen#helptags()
+call plug#begin('~/.vim/plugged')
+
+Plug 'kien/ctrlp.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+
+Plug 'scrooloose/syntastic'
+Plug 'fidian/hexmode'
+
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+
+Plug 'sickill/vim-pasta'
+
+Plug 'itchyny/lightline.vim'
+
+Plug 'flazz/vim-colorschemes'
+
+Plug 'c.vim'
+Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'python.vim', { 'for': 'python' }
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+
+Plug 'vim-scripts/vim-vagrant'
+Plug 'ekalinin/Dockerfile.vim'
+
+Plug 'elzr/vim-json'
+Plug 'plasticboy/vim-markdown'
+
+Plug 'mattn/emmet-vim'
+Plug 'digitaltoad/vim-jade'
+Plug 'pangloss/vim-javascript'
+
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-lastpat'
+Plug 'beloglazov/vim-textobj-quotes'
+Plug 'jceb/vim-textobj-uri'
+Plug 'bps/vim-textobj-python'
+Plug 'tek/vim-textobj-ruby'
+Plug 'michaeljsmith/vim-indent-object'
+
+Plug 'vasconcelloslf/vim-interestingwords'
+
+Plug 'junegunn/vim-peekaboo'
+
+Plug 'mileszs/ack.vim'
+
+call plug#end()
 
 set encoding=utf8
 set nocompatible
@@ -15,12 +64,17 @@ set hlsearch
 
 set viminfo='10,\"100,:20,%,n~/.viminfo
 
+set hidden
 set wildmenu
+
+set laststatus=2
+set timeoutlen=1000 ttimeoutlen=0
+set noshowmode
 
 filetype plugin indent on
 syntax on
 
-colorscheme jellybeans
+colorscheme jelleybeans
 
 " Custom mappings
 let mapleader="þ"
@@ -39,11 +93,6 @@ noremap ` '
 let g:vim_markdown_folding_disabled=1
 let g:pymode_folding=0
 
-" Powerline
-set laststatus=2
-let g:Powerline_symbols = 'fancy'
-set timeoutlen=1000 ttimeoutlen=0
-
 " Restore cursor to last position
 function! ResCur()
     if line("'\"") <= line("$")
@@ -57,5 +106,105 @@ augroup resCur
     autocmd BufWinEnter * call ResCur()
 augroup END
 
+" Custom functions
 com! FormatJSON %!python -m json.tool
 
+" Lightline
+let g:lightline = {
+    \ 'colorscheme': 'powerline',
+    \ 'active': {
+    \     'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ], ['ctrlpmark'] ]
+    \ },
+    \ 'component_function': {
+    \     'modified': 'LL_Modified',
+    \     'readonly': 'LL_Readonly',
+    \     'fugitive': 'LL_Fugitive',
+    \     'filename': 'LL_Filename',
+    \     'fileformat': 'LL_Fileformat',
+    \     'filetype': 'LL_Filetype',
+    \     'fileencoding': 'LL_Fileencoding',
+    \     'mode': 'LL_Mode',
+    \     'ctrlpmark': 'LL_CtrlPMark'
+    \ },
+    \ 'separator': { 'left': '⮀', 'right': '⮂' },
+    \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
+    \ }
+
+function! LL_Modified()
+    if &filetype == "help"
+        return ""
+    elseif &modified
+        return "+"
+    elseif &modifiable
+        return ""
+    else
+        return ""
+    endif
+endfunction
+
+function! LL_Readonly()
+    if &filetype == "help"
+        return ""
+    elseif &readonly
+        return "⭤"
+    else
+        return ""
+    endif
+endfunction
+
+function! LL_Filename()
+    if expand('%:t') =~ 'ControlP'
+        return g:lightline.ctrlp_prev . ' ' . g:lightline.subseparator.left . ' ' .
+             \ g:lightline.ctrlp_item . ' ' . g:lightline.subseparator.left . ' ' .
+             \ g:lightline.ctrlp_next
+    endif
+    return ('' != LL_Readonly() ? LL_Readonly() . ' ' : '') .
+         \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
+         \  &ft == 'unite' ? unite#get_status_string() :
+         \  &ft == 'vimshell' ? vimshell#get_status_string() :
+         \  '' != expand('%:t') ? expand('%:t') : '[No Name]') .
+         \ ('' != LL_Modified() ? ' ' . LL_Modified() : '')
+endfunction
+
+function! LL_Fileformat()
+    return winwidth(0) > 70 ? &fileformat : ''
+endfunction
+
+function! LL_Filetype()
+    return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
+endfunction
+
+function! LL_Fileencoding()
+    return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
+endfunction
+
+function! LL_Mode()
+    return winwidth(0) > 60 ? lightline#mode() : ''
+endfunction
+
+function! LL_Fugitive()
+    if exists("*fugitive#head")
+        let _ = fugitive#head()
+        return strlen(_) ? '⭠ '._ : ''
+    endif
+    return ''
+endfunction
+
+function! LL_CtrlPMark()
+    return expand('%:t') =~ 'ControlP' ? g:lightline.ctrlp_marked : ''
+endfunction
+
+let g:ctrlp_status_func = {
+    \ 'main': 'LL_CtrlP_1',
+    \ 'prog': 'LL_CtrlP_2',
+    \ }
+function! LL_CtrlP_1(focus, byfname, regex, prev, item, next, marked)
+    let g:lightline.ctrlp_prev = a:prev
+    let g:lightline.ctrlp_item = a:item
+    let g:lightline.ctrlp_next = a:next
+    let g:lightline.ctrlp_marked = a:marked
+    return lightline#statusline(0)
+endfunction
+function! LL_CtrlP_2(str)
+    return lightline#statusline(0)
+endfunction
