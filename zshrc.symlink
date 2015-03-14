@@ -1,27 +1,35 @@
-# Base paths
-ZSH=$HOME/.zsh/oh-my-zsh
-ZSH_CUSTOM=$HOME/.zsh/custom
+# Antigen plugins
+source $HOME/.zsh/antigen.zsh
 
-# Theme
-ZSH_THEME="ragnarb"
+antigen use oh-my-zsh
 
-# Case sensitive completion
-CASE_SENSITIVE="true"
+antigen bundle brew
+antigen bundle bundler
+antigen bundle docker
+antigen bundle gitfast
+antigen bundle go
+antigen bundle mvn
+antigen bundle node
+antigen bundle npm
+antigen bundle pyenv
+antigen bundle python
+antigen bundle rsync
+antigen bundle osx
+antigen bundle vagrant
+antigen bundle virtualenv
+antigen bundle rupa/z
+antigen bundle zsh-users/zsh-syntax-highlighting
 
-# Disable omz behavior
-DISABLE_AUTO_UPDATE="true"
-DISABLE_CORRECTION="true"
+antigen theme $HOME/.zsh/themes ragnarb --no-local-clone
 
-# Plugins
-plugins=(brew bundler docker gitfast go node mvn npm pyenv python rsync usr vagrant virtualenv)
+antigen apply
 
-source $ZSH/oh-my-zsh.sh
-
-# History 
+# History settings
 setopt inc_append_history
 setopt share_history
 setopt hist_ignore_all_dups
 setopt hist_save_no_dups
+export HISTSIZE=20000
 
 # PATHs
 
@@ -53,3 +61,6 @@ export PATH=$PATH:$DEVMANAGEMENTHOME/bin:$HOME/dev/gq/server-management/bin
 
 # Custom
 export PATH=$PATH:$HOME/bin
+
+# FZF
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
