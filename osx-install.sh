@@ -8,6 +8,7 @@ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 
 # Brews
 cat << EOF | xargs -n 1 brew install
+ack
 arping
 at-spi2-atk
 at-spi2-core
