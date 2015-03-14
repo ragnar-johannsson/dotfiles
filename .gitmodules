@@ -58,3 +58,9 @@
 [submodule "vim.symlink/bundle/vim-fugitive"]
 	path = vim.symlink/bundle/vim-fugitive
 	url = git@github.com:tpope/vim-fugitive.git
+[submodule "vim.symlink/bundle/vim-interestingwords"]
+	path = vim.symlink/bundle/vim-interestingwords
+	url = git@github.com:vasconcelloslf/vim-interestingwords.git
+[submodule "vim.symlink/bundle/Dockerfile"]
+	path = vim.symlink/bundle/Dockerfile
+	url = git@github.com:ekalinin/Dockerfile.vim.git
