@@ -22,6 +22,7 @@ nmap
 nodejs
 pssh
 s3cmd
+screen
 subversion
 vim
 zsh
