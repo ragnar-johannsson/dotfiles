@@ -3,6 +3,7 @@
 # Packages 
 sudo apt-get update
 cat << EOF | xargs -n 1 sudo apt-get install -y 
+ack-grep
 arping
 build-essential
 curl
