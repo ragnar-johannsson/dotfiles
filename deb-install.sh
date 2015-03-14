@@ -28,6 +28,3 @@ subversion
 vim
 zsh
 EOF
-
-# Clone the dotfiles repo and install
-git clone https://github.com/ragnar-johannsson/dotfiles.git $HOME/.dotfiles

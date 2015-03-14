@@ -172,6 +172,3 @@ curl -sSL https://get.rvm.io | bash
 # Meslo Font
 test -d $HOME/Library/Fonts || mkdir $HOME/Library/Fonts
 curl -3 -o "$HOME/Library/Fonts/Meslo LG M Regular for Powerline.otf" https://raw.githubusercontent.com/Lokaltog/powerline-fonts/master/Meslo/Meslo%20LG%20M%20Regular%20for%20Powerline.otf > /dev/null 2>&1
-
-# Clone the dotfiles repo and install
-git clone https://github.com/ragnar-johannsson/dotfiles.git $HOME/.dotfiles
