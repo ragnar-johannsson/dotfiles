@@ -45,21 +45,21 @@ cat <<EOF
 
 EOF
 
-echo -n "Install OS packages? [Y/n]: "
-read -n 1 INSTALL_PACKAGES
-
+echo -n "Install OS packages? [Y/n]: " && read INSTALL_PACKAGES
 if [ "$INSTALL_PACKAGES" != "n" ]; then
+    BASE_URL="https://raw.githubusercontent.com/ragnar-johannsson/dotfiles/master"
+
     case "`uname`" in
     Linux)
         if grep "Debian" /etc/issue >/dev/null 2>&1; then
-            wget -qO - https://raw.githubusercontent.com/ragnar-johannsson/dotfiles/master/deb-install.sh | bash || true
+            (wget -qO - $BASE_URL/deb-install.sh | bash) || true
         else
             echo "Error: Unsupported Linux distro"
             exit 1
         fi
         ;;
     Darwin)
-        curl -sSL https://raw.githubusercontent.com/ragnar-johannsson/dotfiles/master/osx-install.sh | bash || true
+        (curl -sSL $BASE_URL/osx-install.sh | bash) || true
         ;;
     esac
 fi
@@ -71,14 +71,12 @@ fi
 
 git clone https://github.com/ragnar-johannsson/dotfiles.git "$HOME/.dotfiles" && cd "$HOME/.dotfiles"
 
-echo -n "Setup symlinks? [Y/n]: "
-read -n 1 SETUP_SYMLINKS
+echo -n "Setup symlinks? [Y/n]: " && read SETUP_SYMLINKS
 if [ "$SETUP_SYMLINKS" != "n" ]; then
     ./setup-links.sh
 fi
 
-echo -n "Fetch keys? [Y/n]: "
--n 1 FETCH_KEYS
+echo -n "Fetch keys? [Y/n]: " && read FETCH_KEYS
 if [ "$FETCH_KEYS" != "n" ]; then
     ./setup-keys.sh
 fi
