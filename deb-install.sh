@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Packages 
-sudo apt-get update
-cat << EOF | xargs -n 1 sudo apt-get install -y 
+apt-get update
+cat << EOF | xargs -n 1 apt-get install -y
 ack-grep
 arping
 build-essential
@@ -25,6 +25,7 @@ pssh
 s3cmd
 screen
 subversion
+sudo
 vim
 zsh
 EOF
