@@ -52,14 +52,14 @@ if [ "$INSTALL_PACKAGES" != "n" ]; then
     case "`uname`" in
     Linux)
         if grep "Debian" /etc/issue >/dev/null 2>&1; then
-            wget -qO - https://raw.githubusercontent.com/ragnar-johannsson/dotfiles/master/deb-install.sh | bash
+            wget -qO - https://raw.githubusercontent.com/ragnar-johannsson/dotfiles/master/deb-install.sh | bash || true
         else
             echo "Error: Unsupported Linux distro"
             exit 1
         fi
         ;;
     Darwin)
-        curl -sSL https://raw.githubusercontent.com/ragnar-johannsson/dotfiles/master/osx-install.sh | bash
+        curl -sSL https://raw.githubusercontent.com/ragnar-johannsson/dotfiles/master/osx-install.sh | bash || true
         ;;
     esac
 fi
@@ -78,7 +78,7 @@ if [ "$SETUP_SYMLINKS" != "n" ]; then
 fi
 
 echo -n "Fetch keys? [Y/n]: "
-read -n 1 FETCH_KEYS
+-n 1 FETCH_KEYS
 if [ "$FETCH_KEYS" != "n" ]; then
     ./setup-keys.sh
 fi
