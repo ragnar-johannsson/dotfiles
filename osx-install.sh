@@ -77,6 +77,7 @@ libvorbis
 libvpx
 libyaml
 mercurial
+moreutils
 mpfr2
 mplayer
 mpssh
