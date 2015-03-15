@@ -70,6 +70,8 @@ set laststatus=2
 set timeoutlen=1000 ttimeoutlen=0
 set noshowmode
 
+set backspace=indent,eol,start
+
 filetype plugin indent on
 syntax on
 
