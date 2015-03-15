@@ -74,6 +74,10 @@ git clone https://github.com/ragnar-johannsson/dotfiles.git "$HOME/.dotfiles" &&
 echo -n "Setup symlinks? [Y/n]: " && read SETUP_SYMLINKS
 if [ "$SETUP_SYMLINKS" != "n" ]; then
     ./setup-links.sh
+    echo "Installing Vim plugins..."
+    vim +PlugInstall +qall
+    echo "Installing Zsh plugins..."
+    zsh -i -c "cat /dev/null"
 fi
 
 echo -n "Fetch keys? [Y/n]: " && read FETCH_KEYS
