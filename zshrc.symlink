@@ -1,5 +1,11 @@
-# Antigen plugins
+# Init antigen
 source $HOME/.zsh/antigen.zsh
+
+# Case sensitive completion
+CASE_SENSITIVE="true"
+
+
+# Antigen plugins
 
 antigen use oh-my-zsh
 
