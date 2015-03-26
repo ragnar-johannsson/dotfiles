@@ -40,12 +40,14 @@ Plug 'jceb/vim-textobj-uri'
 Plug 'bps/vim-textobj-python'
 Plug 'tek/vim-textobj-ruby'
 Plug 'michaeljsmith/vim-indent-object'
+Plug 'Lokaltog/vim-easymotion'
 
 Plug 'vasconcelloslf/vim-interestingwords'
 
 Plug 'junegunn/vim-peekaboo'
 
 Plug 'mileszs/ack.vim'
+
 
 call plug#end()
 
