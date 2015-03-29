@@ -48,6 +48,7 @@ Plug 'junegunn/vim-peekaboo'
 
 Plug 'mileszs/ack.vim'
 
+Plug 'godlygeek/tabular'
 
 call plug#end()
 
