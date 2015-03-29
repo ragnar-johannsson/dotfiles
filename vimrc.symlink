@@ -50,6 +50,8 @@ Plug 'mileszs/ack.vim'
 
 Plug 'godlygeek/tabular'
 
+Plug 'bronson/vim-visual-star-search'
+
 call plug#end()
 
 set encoding=utf8
