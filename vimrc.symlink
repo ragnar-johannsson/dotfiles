@@ -86,6 +86,7 @@ nmap <Leader>p :set paste!<CR>
 nmap <Leader>l :setlocal number!<CR>
 nmap <Leader>n :nohlsearch<CR>
 nmap <Leader>, :CtrlPBuffer<CR>
+nmap <Leader>m :CtrlPMRUFiles<CR>
 nmap <Leader>t :set expandtab tabstop=8 shiftwidth=4 softtabstop=4<CR>
 nmap <Leader>T :set noexpandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>
 nnoremap <Leader>W :w !sudo tee % > /dev/null
