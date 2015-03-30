@@ -85,7 +85,9 @@ set backspace=indent,eol,start
 filetype plugin indent on
 syntax on
 
-colorscheme jelleybeans
+colorscheme jellybeans
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
 
 " Custom mappings
 let mapleader="þ"
