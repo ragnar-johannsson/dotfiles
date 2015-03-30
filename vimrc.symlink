@@ -55,6 +55,8 @@ Plug 'bronson/vim-visual-star-search'
 Plug 'tpope/vim-endwise'
 Plug 'Raimondi/delimitMate'
 
+Plug 'tommcdo/vim-exchange'
+
 call plug#end()
 
 set encoding=utf8
