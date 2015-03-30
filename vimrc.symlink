@@ -52,6 +52,9 @@ Plug 'godlygeek/tabular'
 
 Plug 'bronson/vim-visual-star-search'
 
+Plug 'tpope/vim-endwise'
+Plug 'Raimondi/delimitMate'
+
 call plug#end()
 
 set encoding=utf8
