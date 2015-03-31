@@ -125,7 +125,7 @@ com! FormatJSON %!python -m json.tool
 
 " Lightline
 let g:lightline = {
-    \ 'colorscheme': 'powerline',
+    \ 'colorscheme': 'jellybeans',
     \ 'active': {
     \     'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ], ['ctrlpmark'] ]
     \ },
