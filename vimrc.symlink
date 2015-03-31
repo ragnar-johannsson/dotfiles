@@ -16,7 +16,7 @@ Plug 'sickill/vim-pasta'
 
 Plug 'itchyny/lightline.vim'
 
-Plug 'flazz/vim-colorschemes'
+Plug 'nanotech/jellybeans.vim'
 
 Plug 'c.vim'
 Plug 'fatih/vim-go', { 'for': 'go' }
