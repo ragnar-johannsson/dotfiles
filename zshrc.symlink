@@ -1,34 +1,29 @@
-# Init antigen
-source $HOME/.zsh/antigen.zsh
+# Init zgen
+source $HOME/.zsh/zgen.zsh
 
 # Case sensitive completion
 CASE_SENSITIVE="true"
 
+# zgen plugins
+if ! zgen saved; then
+    zgen oh-my-zsh
 
-# Antigen plugins
+    zgen oh-my-zsh plugins/brew
+    zgen oh-my-zsh plugins/bundler
+    zgen oh-my-zsh plugins/docker
+    zgen oh-my-zsh plugins/gitfast
+    zgen oh-my-zsh plugins/go
+    zgen oh-my-zsh plugins/npm
+    zgen oh-my-zsh plugins/virtualenv
 
-antigen use oh-my-zsh
+    zgen load rupa/z
+    zgen load zsh-users/zsh-completions src
+    zgen load zsh-users/zsh-syntax-highlighting
 
-antigen bundle brew
-antigen bundle bundler
-antigen bundle docker
-antigen bundle gitfast
-antigen bundle go
-antigen bundle mvn
-antigen bundle node
-antigen bundle npm
-antigen bundle pyenv
-antigen bundle python
-antigen bundle rsync
-antigen bundle osx
-antigen bundle vagrant
-antigen bundle virtualenv
-antigen bundle rupa/z
-antigen bundle zsh-users/zsh-syntax-highlighting
+    zgen load ragnar-johannsson/dotfiles zsh.symlink/themes/ragnarb.zsh-theme
 
-antigen theme $HOME/.zsh/themes ragnarb --no-local-clone
-
-antigen apply
+    zgen save
+fi
 
 # History settings
 setopt inc_append_history
