@@ -12,6 +12,7 @@ Plug 'tpope/vim-repeat'
 
 Plug 'tpope/vim-fugitive'
 
+Plug 'tpope/vim-sleuth'
 Plug 'sickill/vim-pasta'
 
 Plug 'itchyny/lightline.vim'
