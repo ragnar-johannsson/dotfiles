@@ -19,6 +19,7 @@ if ! zgen saved; then
     zgen load rupa/z
     zgen load zsh-users/zsh-completions src
     zgen load zsh-users/zsh-syntax-highlighting
+    zgen load zsh-users/zaw
 
     zgen load ragnar-johannsson/dotfiles zsh.symlink/themes/ragnarb.zsh-theme
 
@@ -31,6 +32,17 @@ setopt share_history
 setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 export HISTSIZE=20000
+
+# Zaw ack + history search
+bindkey '^R' zaw-history
+bindkey '^A' zaw-ack
+bindkey -M filterselect '^R' down-line-or-history
+bindkey -M filterselect '^S' up-line-or-history
+bindkey -M filterselect '^E' accept-search
+bindkey -M filterselect 'OF' accept-search
+zstyle ':filter-select:highlight' matched fg=yellow
+zstyle ':filter-select' max-lines 5
+zstyle ':filter-select' extended-search yes
 
 # PATHs
 
