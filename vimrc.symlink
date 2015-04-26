@@ -92,13 +92,13 @@ highlight NonText ctermbg=none
 
 " Custom mappings
 let mapleader="þ"
-nmap <Leader>p :set paste!<CR>
-nmap <Leader>l :setlocal number!<CR>
-nmap <Leader>n :nohlsearch<CR>
-nmap <Leader>, :CtrlPBuffer<CR>
-nmap <Leader>m :CtrlPMRUFiles<CR>
-nmap <Leader>t :set expandtab tabstop=8 shiftwidth=4 softtabstop=4<CR>
-nmap <Leader>T :set noexpandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>
+nnoremap <Leader>p :set paste!<CR>
+nnoremap <Leader>l :setlocal number!<CR>
+nnoremap <Leader>n :nohlsearch<CR>
+nnoremap <Leader>, :CtrlPBuffer<CR>
+nnoremap <Leader>m :CtrlPMRUFiles<CR>
+nnoremap <Leader>t :set expandtab tabstop=8 shiftwidth=4 softtabstop=4<CR>
+nnoremap <Leader>T :set noexpandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>
 nnoremap <Leader>W :w !sudo tee % > /dev/null
 nnoremap <C-H> :Hexmode<CR>
 noremap ' `
