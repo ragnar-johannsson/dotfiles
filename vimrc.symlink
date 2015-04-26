@@ -60,6 +60,8 @@ Plug 'tommcdo/vim-exchange'
 
 Plug 'ntpeters/vim-better-whitespace'
 
+Plug 'bruno-/vim-man'
+
 call plug#end()
 
 set encoding=utf8
