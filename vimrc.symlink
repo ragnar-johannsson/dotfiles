@@ -1,7 +1,7 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'kien/ctrlp.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install' }
 
 Plug 'scrooloose/syntastic'
 Plug 'fidian/hexmode'
