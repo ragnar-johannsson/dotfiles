@@ -101,6 +101,7 @@ nnoremap <Leader>t :set expandtab tabstop=8 shiftwidth=4 softtabstop=4<CR>
 nnoremap <Leader>T :set noexpandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>
 nnoremap <Leader>W :w !sudo tee % > /dev/null
 nnoremap <C-H> :Hexmode<CR>
+nnoremap <C-K> :FZF<CR>
 noremap ' `
 noremap ` '
 
