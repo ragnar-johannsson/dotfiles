@@ -58,6 +58,8 @@ Plug 'Raimondi/delimitMate'
 
 Plug 'tommcdo/vim-exchange'
 
+Plug 'ntpeters/vim-better-whitespace'
+
 call plug#end()
 
 set encoding=utf8
