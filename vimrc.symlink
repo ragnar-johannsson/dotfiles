@@ -110,6 +110,7 @@ noremap ' `
 noremap ` '
 
 " Plugin customizations
+let g:vim_json_syntax_conceal=0
 let g:vim_markdown_folding_disabled=1
 let g:pymode_folding=0
 
