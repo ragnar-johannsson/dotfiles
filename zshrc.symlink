@@ -1,11 +1,11 @@
-# Init zgen
-source $HOME/.zsh/zgen.zsh
-
 # Case sensitive completion
 CASE_SENSITIVE="true"
 
 # Disable omz auto-update
 DISABLE_AUTO_UPDATE="true"
+
+# Init zgen
+source $HOME/.zsh/zgen.zsh
 
 # zgen plugins
 if ! zgen saved; then
