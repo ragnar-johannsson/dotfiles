@@ -7,9 +7,16 @@ function initialize {
 
 function backup_if_exists {
     if [ -e "$1" ]; then
-        test -d "$BACKUP_DIR" || mkdir -p "$BACKUP_DIR" 
+        test -d "$BACKUP_DIR" || mkdir -p "$BACKUP_DIR"
         mv $1 "$BACKUP_DIR"
     fi
+}
+
+function install_plugins {
+    echo "Installing Vim plugins..."
+    vim +PlugInstall +qall
+    echo "Installing Zsh plugins..."
+    zsh -i -c "cat /dev/null"
 }
 
 # Main
@@ -22,3 +29,4 @@ for SRC in *.symlink; do
     ln -s $BASE/$SRC $DST
 done
 
+install_plugins
