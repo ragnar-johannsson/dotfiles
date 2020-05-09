@@ -53,7 +53,6 @@ Plug 'godlygeek/tabular'
 Plug 'bronson/vim-visual-star-search'
 
 Plug 'tpope/vim-endwise'
-Plug 'Raimondi/delimitMate'
 
 Plug 'tommcdo/vim-exchange'
 
