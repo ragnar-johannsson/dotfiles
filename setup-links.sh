@@ -1,8 +1,8 @@
 #!/bin/bash
 
 function initialize {
-    BASE=$HOME/.dotfiles
-    BACKUP_DIR=$HOME/.backup/dotfiles_$(date +"%Y-%m-%d")_$RANDOM
+    BASE=$(dirname "${BASH_SOURCE[0]}")
+    BACKUP_DIR=$BASE/.backup/dotfiles_$(date +"%Y-%m-%d")_$RANDOM
 }
 
 function backup_if_exists {
@@ -23,6 +23,7 @@ function install_plugins {
 initialize "$@"
 
 # Symlink dotfiles
+cd $BASE
 for SRC in *.symlink; do
     DST=$HOME/$(echo .$SRC|sed 's/\.symlink//')
     backup_if_exists $DST
