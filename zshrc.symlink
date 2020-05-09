@@ -46,37 +46,9 @@ zstyle ':filter-select:highlight' matched fg=yellow
 zstyle ':filter-select' max-lines 5
 zstyle ':filter-select' extended-search yes
 
-# PATHs
-
-# Npm
-export PATH=$PATH:/usr/local/share/npm/bin
-
-# Go
-export GOPATH=$HOME/dev/go
-export PATH=$PATH:$GOPATH/bin
-
-# Pyenv
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-PATH=$HOME/.pyenv/shims:$PATH
-
-# Perl
-export PERL_MB_OPT="--install_base \"$HOME/perl5\""
-export PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"
-
-# RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-PATH=$PATH:$HOME/.rvm/bin
-
-# Brew
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH:$HOME/.bin
-
-# GQ
-export DEVMANAGEMENTHOME=$HOME/dev/gq/development-management
-export PATH=$PATH:$DEVMANAGEMENTHOME/bin:$HOME/dev/gq/server-management/bin
-
-# Custom
-export PATH=$PATH:$HOME/bin
-
 # Vim
 export EDITOR="vim"
 alias vi=vim
+
+# Local
+[ -f "$HOME/.zshrc_local" ] && source "$HOME/.zshrc_local"
