@@ -1,20 +1,18 @@
 ## Dotfiles
 
-Configuration files for Zsh and Vim, mostly. Package installations for OSX and Debian.
-
+Configuration files for Zsh and Vim, mostly.
 
 ### Usage
 
-Run:
+Clone:
 
-    bash <(curl -s dotfiles.kreb.org)
+    git clone https://github.com/ragnar-johannsson/dotfiles $HOME/.dotfiles
 
-Or:
+Set up symlinks:
 
-    bash <(wget -qO - dotfiles.kreb.org)
+    $HOME/.dotfiles/setup-links.sh
 
-This will effectively fetch and run the `bootstrap.sh` script.
-
+Backups of dotfiles overwritten with setup-links.sh are in `$HOME/.dotfiles/.backup`.
 
 ### License
 
