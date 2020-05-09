@@ -4,3 +4,4 @@
 Vagrantfile
 *.swp
 vim.symlink/plugged
+.backup/
