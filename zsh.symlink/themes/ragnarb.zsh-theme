@@ -1,4 +1,5 @@
-local user='%{$fg[green]%}%n@%{$fg[green]%}%m%{$reset_color%}'
+local user='%{$FG[034]%}%n@%{$FG[034]%}%m%{$reset_color%}'
+local root='%{$FG[203]%}%n@%{$FG[203]%}%m%{$reset_color%}'
 local pwd='%{$fg[blue]%}%~%{$reset_color%}'
 local return_code='%(?..%{$fg[red]%}%? %{$reset_color%})'
 local git_branch='$(git_prompt_status)%{$reset_color%}$(git_prompt_info)%{$reset_color%}'
@@ -15,5 +16,10 @@ ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[magenta]%} *"
 ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[yellow]%} *"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%} *"
 
-PROMPT="${user}:${pwd} $(if [ "$UID" -eq 0 ]; then echo '#'; else echo '$'; fi) "
+if [ "$UID" -eq 0 ]; then
+    PROMPT="%B${root}:%B${pwd} # %b"
+else
+    PROMPT="%B${user}:%B${pwd} $ %b"
+fi
+
 RPROMPT="${return_code} ${git_branch}"
