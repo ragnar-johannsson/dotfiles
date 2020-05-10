@@ -10,14 +10,11 @@ source $HOME/.zsh/zgen.zsh
 # zgen plugins
 if ! zgen saved; then
     zgen oh-my-zsh
-
-    zgen oh-my-zsh plugins/brew
-    zgen oh-my-zsh plugins/bundler
-    zgen oh-my-zsh plugins/docker
+    zgen oh-my-zsh plugins/golang
     zgen oh-my-zsh plugins/gitfast
-    zgen oh-my-zsh plugins/go
-    zgen oh-my-zsh plugins/npm
-    zgen oh-my-zsh plugins/virtualenv
+    zgen oh-my-zsh plugins/aws
+    zgen oh-my-zsh plugins/docker
+    zgen oh-my-zsh plugins/kubectl
 
     zgen load rupa/z
     zgen load zsh-users/zsh-completions src
